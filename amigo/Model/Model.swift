@@ -53,9 +53,10 @@ struct Guide:Identifiable, Hashable{
     var language: [String]
     var imageURL: URL?
     var imageReferenceID: String = ""
+    
 }
 
-struct Booking: Encodable, Identifiable, Hashable{
+struct Booking: Codable, Identifiable, Hashable{
     @DocumentID var id:String?
     var bookingID:String?
     var bookingDate:Int

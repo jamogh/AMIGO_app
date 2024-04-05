@@ -1,82 +1,39 @@
-
-//
 //import SwiftUI
-//import Firebase // Import Firebase
-//
-//struct BookingView: View {
-//    @StateObject var bookingViewModel = HomeViewModel()
-//    @State private var bookings: [Booking] = []
-//    
-//    var body: some View {
-//        NavigationView {
-//            List {
-//                ForEach(bookings, id: \.id) { booking in
-//                    NavigationLink(destination: OrderDetailView(booking: booking)) {
-//                        VStack(alignment: .leading, spacing: 8) {
-//                            Text("Guide: \(booking.guideName)")
-//                                .font(.headline)
-//                            Text("Location: \(booking.location)")
-//                                .font(.subheadline)
-//                            Text("Date: \(booking.bookingDate.formatted(date: .abbreviated, time: .omitted))")
-//                                .font(.subheadline)
-//                            Text("Time: \(booking.bookingTime)")
-//                                .font(.subheadline)
-//                        }
-//                    }
-//                }
-//            }
-//            .navigationTitle("Bookings")
-//            .onAppear {
-//                // Fetch booking details from Firestore
-//                fetchBookingDetails()
-//            }
-//        }
-//    }
-//    
-//    func fetchBookingDetails() {
-//        bookingViewModel.getCurrentBookings { fetchedBookings in
-//            self.bookings = fetchedBookings
-//        }
-//    }
-//}
-//
-//struct BookingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BookingView()
-//    }
-//}
-
-
-//import SwiftUI
+//import FirebaseAuth
+//import FirebaseFirestore
+//import FirebaseFirestoreSwift
+//import SDWebImageSwiftUI
 //
 //struct BookingView: View {
 //    @StateObject var homeViewModel = HomeViewModel()
+//    @StateObject var guideViewModel = GuideViewModel()
+//    var guideID: String = "" // Assign guide ID here
 //
 //    var body: some View {
 //        NavigationView {
 //            List {
-//                ForEach(homeViewModel.booking, id: \.id) { booking in // Use homeViewModel.booking instead of bookings
-//                    NavigationLink(destination: OrderDetailView(booking: booking)) {
-//                        VStack(alignment: .leading, spacing: 8) {
-//                            Text("Guide: \(booking.guideName)")
-//                                .font(.headline)
-//                            Text("Location: \(booking.location)")
-//                                .font(.subheadline)
-//                            Text("Date: \(booking.bookingDate.formatted(date: .abbreviated, time: .omitted))")
-//                                .font(.subheadline)
-//                            Text("Time: \(booking.bookingTime)")
-//                                .font(.subheadline)
-//                        }
+//                // Your existing bookings list here
+//                
+//                // Display guide bookings fetched from ViewModel
+//                ForEach(guideViewModel.guideSpecific, id: \.id) { guideBooking in
+//                    VStack(alignment: .leading) {
+//                        Text("Guide Booking ID: \(guideBooking.bookingID)")
+//                        Text("Booking Date: \(guideBooking.bookingDate)")
+//                        Text("Booking Time: \(guideBooking.bookingTime)")
+//                        // Add more details as needed
 //                    }
 //                }
-//
 //            }
 //            .navigationTitle("Bookings")
 //            .onAppear {
-//                // Fetch booking details from Firestore
+//                // Fetch user's bookings
 //                homeViewModel.getBookings()
+//                
+//                // Fetch guide bookings
+//                guideViewModel.fetchGuideBookings(guideID: guideID){
+//                    guideBookings in
+//                }
 //            }
 //        }
-//        Text("Hello")
 //    }
 //}

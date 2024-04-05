@@ -22,8 +22,9 @@ struct ProfileView: View {
                
                 if homeViewModel.user.count > 0 {
                     
-                    NavigationLink(destination: EditProfileView()) {
+//                    NavigationLink(destination: EditProfileView()) {
                         ScrollView(showsIndicators:false){
+                            Spacer()
                         if(homeViewModel.user[0].imageURL == ""){
                             
                             VStack(spacing: 8) {
@@ -53,27 +54,41 @@ struct ProfileView: View {
                             )
                         }
                         else{
-                            HStack(spacing: 8) {
+                            
                                 WebImage(url: URL(string: homeViewModel.user[0].imageURL!))
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 80, height: 80)
+                                    .frame(width: 150, height: 150, alignment: .center)
                                     .clipShape(Circle())
+                            Spacer()
+                            VStack(spacing: 8) {
                                 VStack(alignment: .leading,spacing: 8) {
-                                    Text(homeViewModel.user[0].name)
-                                        .font(Font.custom("SF Pro Display Regular",size: 16))
-                                    Text(homeViewModel.user[0].phone)
-                                        .font(Font.custom("SF Pro Display Light",size: 14))
+                                    Spacer()
+                                    HStack {
+                                        Text("Name:")
+                                        Text(homeViewModel.user[0].name)
+                                            .font(Font.custom("SF Pro Display Regular",size: 16))
+                                    }
+                                    
+                                    Spacer()
+                                    Divider()
+                                    HStack {
+                                        Text("Phone:")
+                                        Text(homeViewModel.user[0].phone)
+                                            .font(Font.custom("SF Pro Display Light",size: 14))
+                                    }
+                                    
+                                    Spacer()
                                 }
                                 Spacer()
-                                Image(systemName: "chevron.right")
+//                                Image(systemName: "chevron.right")
                             }
                             .padding(.horizontal, 16)
-                            .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .leading)
+                            .frame(width: UIScreen.main.bounds.width-32, height: 100, alignment: .leading)
                             .foregroundColor(.black)
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .frame(height: 65)
+                                    .frame(height: 100)
                                     .foregroundColor(Color(.white))
                             )
                             }
@@ -99,7 +114,7 @@ struct ProfileView: View {
                                 }
                                 .padding(.horizontal, 16)
                         }
-                    }
+//                    }
                     
                 }
                 

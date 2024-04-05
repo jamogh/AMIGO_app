@@ -78,5 +78,33 @@ class GuideViewModel: NSObject,ObservableObject{
     }
     
     
+    // Method to fetch guide's bookings
+        func fetchGuideBookings(guideID: String, completion: @escaping ([Booking]) -> Void) {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Booking")
+            
+            let query = collectionRef.whereField("guideID", isEqualTo: guideID)
+            
+            query.getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching guide's bookings: \(error.localizedDescription)")
+                    completion([])
+                    return
+                }
+                
+                var bookings: [Booking] = []
+                if let snapshot = snapshot {
+                    for document in snapshot.documents {
+                        if let booking = try? document.data(as: Booking.self) {
+                            bookings.append(booking)
+                        }
+                    }
+                }
+                completion(bookings)
+            }
+        }
+    
+    
+    
 }
 
