@@ -129,28 +129,29 @@
 //}
 
 
-import SwiftUI
-
-struct BookingView: View {
-    @StateObject var homeViewModel = HomeViewModel()
-
-    var body: some View {
+//import SwiftUI
+//
+//struct BookingView: View {
+//    @StateObject var homeViewModel = HomeViewModel()
+//
+//    var body: some View {
 //        NavigationView {
 //            List {
-//                ForEach(homeViewModel.booking) { booking in
+//                ForEach(homeViewModel.booking, id: \.id) { booking in // Use homeViewModel.booking instead of bookings
 //                    NavigationLink(destination: OrderDetailView(booking: booking)) {
 //                        VStack(alignment: .leading, spacing: 8) {
 //                            Text("Guide: \(booking.guideName)")
 //                                .font(.headline)
 //                            Text("Location: \(booking.location)")
 //                                .font(.subheadline)
-//                            Text("Date: \(booking.bookingDate.formatted())")
+//                            Text("Date: \(booking.bookingDate.formatted(date: .abbreviated, time: .omitted))")
 //                                .font(.subheadline)
 //                            Text("Time: \(booking.bookingTime)")
 //                                .font(.subheadline)
 //                        }
 //                    }
 //                }
+//
 //            }
 //            .navigationTitle("Bookings")
 //            .onAppear {
@@ -158,6 +159,6 @@ struct BookingView: View {
 //                homeViewModel.getBookings()
 //            }
 //        }
-        Text("Hello")
-    }
-}
+//        Text("Hello")
+//    }
+//}
