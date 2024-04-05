@@ -11,8 +11,8 @@ struct OrderDetailView: View {
     var guideRating:String = ""
     var guideLanguage:[String] = []
     var appointmentTime:Date = Date()
-    var appointmentDate:Date = Date(
-    )
+    var appointmentDate:Date = Date()
+//    var booking: Booking
     var numberAdult = 1
     var numberChild = 0
     var guidePhone:String = ""

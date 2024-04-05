@@ -210,21 +210,21 @@ struct HomeView: View {
             }
             .navigationTitle("Delhi")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        isProfileActive.toggle()
-                    } label: {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .scaledToFill()
-                            .padding(.top,16)
-                            .frame(width: 25, height: 25)
-                        
-                    }
-                    .padding(.bottom, 16)
-                }
-            }
+//            .toolbar {
+//                ToolbarItem {
+//                    Button {
+//                        isProfileActive.toggle()
+//                    } label: {
+//                        Image(systemName: "person.fill")
+//                            .resizable()
+//                            .scaledToFill()
+//                            .padding(.top,16)
+//                            .frame(width: 25, height: 25)
+//                        
+//                    }
+//                    .padding(.bottom, 16)
+//                }
+//            }
             
 
 //            .sheet(isPresented: $isProfileActive) {

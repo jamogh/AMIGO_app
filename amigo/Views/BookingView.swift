@@ -127,3 +127,37 @@
 //        BookingView()
 //    }
 //}
+
+
+import SwiftUI
+
+struct BookingView: View {
+    @StateObject var homeViewModel = HomeViewModel()
+
+    var body: some View {
+//        NavigationView {
+//            List {
+//                ForEach(homeViewModel.booking) { booking in
+//                    NavigationLink(destination: OrderDetailView(booking: booking)) {
+//                        VStack(alignment: .leading, spacing: 8) {
+//                            Text("Guide: \(booking.guideName)")
+//                                .font(.headline)
+//                            Text("Location: \(booking.location)")
+//                                .font(.subheadline)
+//                            Text("Date: \(booking.bookingDate.formatted())")
+//                                .font(.subheadline)
+//                            Text("Time: \(booking.bookingTime)")
+//                                .font(.subheadline)
+//                        }
+//                    }
+//                }
+//            }
+//            .navigationTitle("Bookings")
+//            .onAppear {
+//                // Fetch booking details from Firestore
+//                homeViewModel.getBookings()
+//            }
+//        }
+        Text("Hello")
+    }
+}
