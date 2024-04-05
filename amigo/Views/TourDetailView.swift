@@ -62,7 +62,7 @@ struct TourDetailView: View {
                                         .scaledToFill()
                                     
                                 }
-                                Text("About Tour")
+                                Text("About Tour detail")
                                     .fontWeight(.bold)
                                 Text(homeViewModel.cities[0].description)
                                 
