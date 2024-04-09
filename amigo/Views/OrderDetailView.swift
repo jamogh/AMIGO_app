@@ -111,9 +111,11 @@ struct OrderDetailView: View {
                         VStack(alignment: .leading, spacing: 8) {
                             ContactInfoRow(title: "Phone", value: guidePhone)
                             ContactInfoRow(title: "Email", value: guideEmail)
+                            ContactInfoRow(title: "Meeting Point", value: guideLocation)
                         }
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+                        
                     }
                     
                     // Booking Details Section

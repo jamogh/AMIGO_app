@@ -66,17 +66,20 @@ struct TourDetailView: View {
                                     .fontWeight(.bold)
                                 Text(homeViewModel.cities[0].description)
                                 
-//                                ForEach(homeViewModel.cities[0].features, id: \.self) { language in
-//                                    VStack {
-//                                        
-//                                        Spacer() // Add spacer to push Text(language) to the trailing edge
-//                                        Text(language)
-//                                            .font(Font.custom("SF Pro Display Regular", size: 14, relativeTo: .title3))
-//                                            .italic()
-//                                            .frame(maxWidth: .infinity, alignment: .leading)
-//                                            .fontWeight(.medium)
-//                                    }
-//                                }
+                                Text("Itenary:")
+                                    .fontWeight(.bold)
+                                
+                                ForEach(homeViewModel.cities[0].features, id: \.self) { language in
+                                    VStack {
+                                        
+                                        Spacer() // Add spacer to push Text(language) to the trailing edge
+                                        Text(language)
+                                            .font(Font.custom("SF Pro Display Regular", size: 14, relativeTo: .title3))
+                                            .italic()
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .fontWeight(.medium)
+                                    }
+                                }
                                 
                             }
                             .padding()
