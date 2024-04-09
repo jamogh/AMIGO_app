@@ -71,9 +71,9 @@ struct OrderDetailView: View {
                                     .font(.title)
                                     .fontWeight(.bold)
                                 
-                                Text(guideLocation)
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
+//                                Text(guideLocation)
+//                                    .font(.subheadline)
+//                                    .fontWeight(.semibold)
                                 
                                 Divider()
 //
